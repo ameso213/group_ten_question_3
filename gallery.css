@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h2 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 36px;
+  color: #333;
+}
+
+/* Gallery Container */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+/* Gallery Item */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  width: 100%; 
+  padding-top: 100%; 
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, border 0.3s ease; /* Added border transition */
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; 
+  border: 3px solid #fff; /* White border by default */
+  box-sizing: border-box; /* Ensures the border doesn't affect the item size */
+}
+
+/* Hover Effect - Scale and Border */
+.gallery-item:hover {
+  transform: scale(1.05);
+  border-color: #3498db; /* Change border color on hover (blue in this case) */
+}
+
+/* Image Style */
+.gallery-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1); 
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 0; /* Initially hidden */
+}
+
+
+.gallery-item:hover .caption {
+  opacity: 1; 
+  background: rgba(0, 0, 0, 0.7); 
+}
